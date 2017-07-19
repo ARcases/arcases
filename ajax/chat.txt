@@ -1,0 +1,6 @@
+﻿<div class="chat-msg">
+            <div class="caht-ava"><img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/32/324ada1396174aac40a482867736b52fb28fc5e5_medium.jpg" width="30px"></div>
+            <div class="caht-name"><a href="http://skinsup.ru/" target="_blank">SKINSUP.RU</a></div>
+            <div class="caht-dateid">08:11:37 | 02.08.2015</div>
+            <div class="msg-text">Чат предоставлен сайтом skinsup.ru</div>
+        </div>
