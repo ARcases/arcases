@@ -1,0 +1,204 @@
+Залить содержимое архива в кореннь сайта:
+
+ajax ->
+------------- chat.php
+------------- chat.txt (Права 777)
+
+js  ->
+------------- chat.js
+
+img  ->
+------------- smlbtn.png
+
+######################################################
+
+Открыть файл head.php и допиcать перед </head>:
+
+<script src="js/chat.js"></script>
+<script>
+function load_messes()
+	{
+		$.ajax({
+                type: "POST",
+                url:  "chatread.php",
+                data: "req=ok",
+                success: function(test)
+				{
+					$("#mcaht").empty();
+					$("#mcaht").append(test);
+					$("#mcaht").scrollTop(8000);
+                }
+        });
+	}
+</script>
+
+######################################################
+
+Открываем файл /css/all.css и в самый конец дописываем:
+
+.caht-box {
+	background: #fff;
+	height: 300px;
+	height: auto;
+	padding: 5px;
+	width: 230px;
+}
+.boxs {
+	height: 20px;
+	width: 100%;
+}
+.left-chat {
+	background: rgba(34, 34, 34, 0.9);
+	border: solid 1px #181818;
+	font-size: 11px;
+	height: 300px;
+	overflow: auto;
+	padding: 5px;
+	position: relative;
+	text-align: left;
+	width: 213px;
+}
+.chat-scroll {
+	background: #212121;
+	height: 310px;
+	position: absolute;
+	right: 9;
+	top: 44;
+	width: 20px;
+	z-index: 20;
+}
+.chat-title {
+	background: #222;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 5px;
+	padding-left: 5px;
+	text-align: left;
+	width: 220px;
+}
+.chat-inpunt {
+	background: rgba(33, 33, 33, 0.9);
+	border: solid 1px #181818;
+	font-size: 11px;
+	height: 30px;
+	outline: none;
+	position: relative;
+	top: 3px;
+	width: 100%;
+}
+.chat-btn {
+	background: #EA7526;
+	border: solid 1px #222;
+	border-radius: 3px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 11px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 8px;
+	text-align: center;
+	width: 180px;
+}
+.chat-btn:hover {
+	background: #BB5D1E;
+}
+.chat-o span {
+	color: #fff;
+}
+.chat-msg {
+	border-bottom: solid 1px #353535;
+	float: left;
+	height: auto;
+	margin-top: 5px;
+	overflow: hidden;
+	padding-bottom: 5px;
+}
+.chat-o {
+	color: #EA7526;
+	float: right;
+	margin-right: 5px;
+}
+.caht-ava {
+	float: left;
+	height: 40px;
+	width: 40px;
+}
+.caht-ava img {
+	border: solid 2px #BB5D1E;
+	border-radius: 4px;
+}
+.caht-name {
+	color: #EA7526;
+	float: left;
+	height: 15px;
+	margin-top: 2px;
+	width: 140px;
+}
+.caht-dateid {
+	color: #6C9FCE;
+	float: left;
+	font-size: 10px;
+	height: 15px;
+	margin-top: 3px;
+	width: 140px;
+}
+.msg-text {
+	float: left;
+	margin-top: 2px;
+	width: 100%;
+}
+.result {
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+	color: #fff;
+	display: none;
+	font-weight: 400;
+	height: 60;
+	line-height: 55px;
+	moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+	position: absolute;
+	text-align: center;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+	webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+	width: 100%;
+	z-index: 999;
+}
+.error {
+	background: #B83A26;
+}
+.success {
+	background: #EA7526;
+}
+.sml-bnt {
+	background: #EA7526 url('../img/smlbtn.png') center -3px;
+	border: solid 1px #222;
+	border-radius: 3px;
+	cursor: pointer;
+	float: right;
+	font-size: 13px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: -32px;
+	text-align: center;
+	width: 40px;
+}
+.sml-bnt:hover {
+	background: #BB5D1E url('../img/smlbtn.png') center -3px;
+}
+.cht-au {
+	width: 100%;
+}
+
+######################################################
+
+Открываем файл header.php и в начале файла добави:
+
+<div class="result success" id="success"></div>
+<div class="result error" id="error"></div>
+
+######################################################
+
+Открываем файл sidebar.php и в месте где хотети видеть чат, подколючаем его:
+
+<? include ('mini-chat.php'); ?>
+

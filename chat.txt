@@ -1,0 +1,1 @@
+﻿<img src='https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/16/16ecc6292a0026b95c91524c6c1f16e39835987f_full.jpg' height='50' width='50'></img><p style='float: right;width: 210px;overflow-wrap: break-word;padding: 3px;padding-left: 13px;margin: 0px;'><span>FresTO</span><br><a style='display: block;margin-top: 5px;'>тест </a></p> 
